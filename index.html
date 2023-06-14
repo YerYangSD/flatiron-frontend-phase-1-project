@@ -38,6 +38,24 @@
     <!-- header ends -->
     <!-- main begins -->
     <main>
+        <section class="search-form">
+            <h2>Form Section</h2>
+            <form action="GET" id="meal-form">
+                <label for="search-terms">Search Term:</label>
+                <input type="text" name="search-terms" id="search-terms" placeholder="input search term" required>
+
+                <label for="category-filter">Category Filter</label>
+                <select name="category-filter" id="category-filter" required>
+                    <option value="option 1">option 1</option>
+                    <option value="option 2">option 2</option>
+                    <option value="option 3">option 3</option>
+                    <option value="option 3">option 4</option>
+                </select>
+
+                <input type="submit" value="Search">
+            </form>
+        </section>
+
         <section id="section1">
             <h2>Section 1</h2>
             <img src="#" alt="some image">
