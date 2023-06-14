@@ -1,1 +1,3 @@
-console.log('connected')
+const handleFormInputFocus = (event) => {
+    console.log("focus occured")
+}
