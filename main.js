@@ -1,4 +1,7 @@
 console.log('main.js connected')
+
+const searchTermsInput = document.body.querySelector("#search-terms")
+
 const getMealCategories = async () => {
     const mealCategoriesApiURL = "https://www.themealdb.com/api/json/v1/1/categories.php"
 
