@@ -6,7 +6,7 @@
             "family": "Ebenaceae",
             "order": "Rosales",
             "genus": "Diospyros",
-            "nutritions": {
+            "image": "./image/persimmon-original.jpg""nutritions": {
                 "calories": 81,
                 "fat": 0,
                 "sugar": 18,
@@ -49,7 +49,7 @@
             "order": "Solanales",
             "genus": "Solanum",
             "nutritions": {
-                "calories": 74,
+                "calories": 18,
                 "fat": 0.2,
                 "sugar": 2.6,
                 "carbohydrates": 3.9,
@@ -203,25 +203,25 @@
             "order": "Sapindales",
             "genus": "Citrus",
             "nutritions": {
-                "calories": 43,
+                "calories": 49,
                 "fat": 0.2,
-                "sugar": 8.2,
-                "carbohydrates": 8.3,
+                "sugar": 8.5,
+                "carbohydrates": 13,
                 "protein": 1
             }
         },
         {
-            "name": "GreenApple",
+            "name": "Green Apple",
             "id": 72,
             "family": "Rosaceae",
             "order": "Rosales",
             "genus": "Malus",
             "nutritions": {
-                "calories": 21,
-                "fat": 0.1,
-                "sugar": 6.4,
-                "carbohydrates": 3.1,
-                "protein": 0.4
+                "calories": 63,
+                "fat": 0,
+                "sugar": 10,
+                "carbohydrates": 15,
+                "protein": 0.5
             }
         },
         {
@@ -287,15 +287,15 @@
             "order": "Rosales",
             "genus": "Fragaria",
             "nutritions": {
-                "calories": 29,
-                "fat": 0.4,
-                "sugar": 5.4,
-                "carbohydrates": 5.5,
-                "protein": 0
+                "calories": 57,
+                "fat": 0.3,
+                "sugar": 10,
+                "carbohydrates": 14.5,
+                "protein": 0.74
             }
         },
         {
-            "name": "Apple",
+            "name": "Red Apple",
             "id": 6,
             "family": "Rosaceae",
             "order": "Rosales",
@@ -304,12 +304,12 @@
                 "calories": 52,
                 "fat": 0.4,
                 "sugar": 10.3,
-                "carbohydrates": 11.4,
+                "carbohydrates": 13.4,
                 "protein": 0.3
             }
         },
         {
-            "name": "Guava",
+            "name": "Pink Guava",
             "id": 37,
             "family": "Myrtaceae",
             "order": "Myrtales",
@@ -329,11 +329,11 @@
             "order": "Rosales",
             "genus": "Prunus",
             "nutritions": {
-                "calories": 15,
-                "fat": 0.1,
-                "sugar": 3.2,
-                "carbohydrates": 3.9,
-                "protein": 0.5
+                "calories": 48,
+                "fat": 0.3,
+                "sugar": 9.2,
+                "carbohydrates": 11,
+                "protein": 1.4
             }
         },
         {
@@ -345,9 +345,9 @@
             "nutritions": {
                 "calories": 43,
                 "fat": 0.4,
-                "sugar": 1,
+                "sugar": 7.8,
                 "carbohydrates": 11,
-                "protein": 0
+                "protein": 0.5
             }
         },
         {
@@ -359,9 +359,9 @@
             "nutritions": {
                 "calories": 34,
                 "fat": 0,
-                "sugar": 8,
+                "sugar": 7.8,
                 "carbohydrates": 8,
-                "protein": 0
+                "protein": 0.8
             }
         },
         {
@@ -376,20 +376,6 @@
                 "sugar": 9.1,
                 "carbohydrates": 8.3,
                 "protein": 0
-            }
-        },
-        {
-            "name": "Pitahaya",
-            "id": 78,
-            "family": "Cactaceae",
-            "order": "Caryophyllales",
-            "genus": "Cactaceae",
-            "nutritions": {
-                "calories": 36,
-                "fat": 0.4,
-                "sugar": 3,
-                "carbohydrates": 7,
-                "protein": 1
             }
         },
         {
@@ -428,10 +414,10 @@
             "genus": "Selenicereus",
             "nutritions": {
                 "calories": 60,
-                "fat": 1.5,
-                "sugar": 8,
-                "carbohydrates": 9,
-                "protein": 9
+                "fat": 0,
+                "sugar": 7,
+                "carbohydrates": 13,
+                "protein": 1
             }
         },
         {
@@ -471,8 +457,8 @@
             "nutritions": {
                 "calories": 44,
                 "fat": 0.4,
-                "sugar": 3,
-                "carbohydrates": 8,
+                "sugar": 8,
+                "carbohydrates": 9,
                 "protein": 0.6
             }
         },
@@ -525,10 +511,10 @@
             "order": "Rosales",
             "genus": "Prunus",
             "nutritions": {
-                "calories": 50,
+                "calories": 63,
                 "fat": 0.3,
-                "sugar": 8,
-                "carbohydrates": 12,
+                "sugar": 12.8,
+                "carbohydrates": 16,
                 "protein": 1
             }
         },
