@@ -8,3 +8,4 @@ As a user, I want to be able to select two different fruits from two dropdowns a
 - [ ] Add fruit names to dropdowns
   - [x] grab the data from db.json
   - [x] iterate through the data to grab the names of the fruit
+  - [ ] grab select element and append fruit names to it
