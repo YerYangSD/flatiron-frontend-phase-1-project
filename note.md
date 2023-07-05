@@ -7,4 +7,4 @@ As a user, I want to be able to select two different fruits from two dropdowns a
 - [x] Create two html dropdowns
 - [ ] Add fruit names to dropdowns
   - [x] grab the data from db.json
-  - [ ] iterate through the data to grab the names of the fruit
+  - [x] iterate through the data to grab the names of the fruit
