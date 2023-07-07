@@ -12,4 +12,4 @@ As a user, I want to be able to select two different fruits from two dropdowns a
 - [x] Populate fruit image into each div container when fruit is has been selected from the options
   - [x] add image tags to html
   - [x] add change event to first selection
-  - [ ] add alternate attribute to images
+  - [x] add alternate attribute to images
