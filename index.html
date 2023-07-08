@@ -4,31 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flatiron Phase 1 Project</title>
+    <title>FruitNutriGuide</title>
+    <!-- css reset: sindresorhus/modern-normalize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+        integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- custom css -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- custom javascript -->
     <script defer src="javascript/main.js"></script>
 </head>
 
 <body>
     <header>
-        <h1>Fruit Nutrition Info</h1>
+        <h1>FruitNutriGuide</h1>
     </header>
-    <section>
-        <label for="selection-1">Selection 1</label>
-        <select id="selection-1"></select>
-        <label for="selection-2">Selection 2</label>
-        <select id="selection-2"></select>
-    </section>
-    <section>
-        <div id="first-image-container">
-            <img src="#" alt="" id="first-image">
-            <table>
-            </table>
-        </div>
-        <div id="second-image-container">
-            <img src="#" alt="" id="second-image">
-        </div>
-    </section>
+    <main>
+        <section class="select-section">
+            <label for="selection-1">Selection a Fruit</label>
+            <select id="selection-1"></select>
+            <br>
+            <label for="selection-2">Selection a Fruit</label>
+            <select id="selection-2"></select>
+        </section>
+        <section class="fruit-image-section">
+            <div id="first-image-container">
+                <img src="#" alt="" id="first-image">
+            </div>
+            <div id="second-image-container">
+                <img src="#" alt="" id="second-image">
+            </div>
+        </section>
+    </main>
     <footer>
         <h3>nothing here for now</h3>
     </footer>

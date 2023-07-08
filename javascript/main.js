@@ -34,6 +34,8 @@ function renderFruitData(fruitData) {
             if (event.target.value === fruit.name) {
                 console.log(fruit.nutritions)
                 firstImage.src = fruit.image
+                firstImage.alt = `This is a picture of a ${fruit.name}`
+                console.log(firstImage)
             }
         })
         selection2.addEventListener("change", event => {
@@ -41,6 +43,7 @@ function renderFruitData(fruitData) {
             if (event.target.value === fruit.name) {
                 // console.log(fruit.image)
                 secondImage.src = fruit.image
+                secondImage.alt = `This is a picture of a ${fruit.name}`
             }
         })
     });
