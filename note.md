@@ -17,5 +17,5 @@ As a user:
   - [x] add change event to first selection
   - [x] add alternate attribute to images
 - [ ] Populate fruit nutrition values for each fruit selected
-  - [ ] create html elements to store fruit nutrition values
+  - [ ] adds html elements to store fruit nutrition values
   - [ ] grab the html elements and append fruit nutrition values to it
