@@ -1,3 +1,14 @@
 body{
-    background-color: aqua;
+    background-color:whitesmoke
+}
+
+#first-image{
+width: 50%;
+height: auto;
+
+}
+
+#second-image{
+    width: 50%;
+    height: auto;
 }
