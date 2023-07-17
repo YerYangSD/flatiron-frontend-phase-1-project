@@ -21,6 +21,7 @@ const secondFruitCarbohydrates = document.querySelector("#second-fruit-carbohydr
 const secondFruitProtein = document.querySelector("#second-fruit-protein")
 const firstSearchBar = document.querySelector("#first-search-bar")
 const secondSearchBar = document.querySelector("#second-search-bar")
+let fruitArray = []
 
 // Function Calls
 getFruitData()
@@ -30,11 +31,16 @@ function getFruitData() {
     return fetch("http://localhost:3000/fruits")
         .then(response => response.json())
         .then(fruitData => {
+            buildFruitArray(fruitData);
             renderFruitData(fruitData)
-            console.log(fruitData)
         })
         .catch(error => alert(error))
 }
+
+function buildFruitArray(fruitData) {
+    fruitData.forEach(fruit => fruitArray.push(fruit))
+}
+console.log(fruitArray)
 
 // Displays fruit names to the dropdowns
 function renderFruitData(fruitData) {
@@ -80,7 +86,7 @@ function renderFruitData(fruitData) {
             const fruitName = event.target.value
             const lowercasedFruitName = fruitName.toString().toLowerCase()
             if (lowercasedFruitName !== fruit.name.toString().toLowerCase()) {
-                console.log("That fruit does not exist in our data yet.")
+                // console.log("That fruit does not exist in our data yet.")
                 // alert("That fruit does not exist in our data yet.")
             } else {
                 if (lowercasedFruitName === fruit.name.toString().toLowerCase()) {
@@ -101,7 +107,7 @@ function renderFruitData(fruitData) {
             const fruitName = event.target.value
             const lowercasedFruitName = fruitName.toString().toLowerCase()
             if (lowercasedFruitName !== fruit.name.toString().toLowerCase()) {
-                console.log("That fruit does not exist in our data yet.")
+                // console.log("That fruit does not exist in our data yet.")
                 // alert("That fruit does not exist in our data yet.")
             } else {
                 if (lowercasedFruitName === fruit.name.toString().toLowerCase()) {
