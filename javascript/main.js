@@ -82,26 +82,26 @@ function renderFruitData(fruitData) {
             }
         })
 
-        firstSearchBar.addEventListener("search", event => {
-            const fruitName = event.target.value
-            const lowercasedFruitName = fruitName.toString().toLowerCase()
-            if (lowercasedFruitName !== fruit.name.toString().toLowerCase()) {
-                // console.log("That fruit does not exist in our data yet.")
-                // alert("That fruit does not exist in our data yet.")
-            } else {
-                if (lowercasedFruitName === fruit.name.toString().toLowerCase()) {
-                    firstFruitName.textContent = fruit.name
-                    firstImage.src = fruit.image
-                    firstImage.alt = `This is a picture of a ${fruit.name}`
-                    firstNutritions.textContent = "Nutritions"
-                    firstFruitCaloiries.textContent = `Calories: ${fruit.nutritions.calories}`
-                    firstFruitFat.textContent = `Fat: ${fruit.nutritions.fat}`
-                    firstFruitSugar.textContent = `Sugar: ${fruit.nutritions.sugar}`
-                    firstFruitCarbohydrates.textContent = `Carboydrates: ${fruit.nutritions.carbohydrates}`
-                    firstFruitProtein.textContent = `Protein: ${fruit.nutritions.protein}`
-                }
-            }
-        })
+        // firstSearchBar.addEventListener("search", event => {
+        //     const fruitName = event.target.value
+        //     const lowercasedFruitName = fruitName.toString().toLowerCase()
+        //     if (lowercasedFruitName !== fruit.name.toString().toLowerCase()) {
+        //         // console.log("That fruit does not exist in our data yet.")
+        //         // alert("That fruit does not exist in our data yet.")
+        //     } else {
+        //         if (lowercasedFruitName === fruit.name.toString().toLowerCase()) {
+        //             firstFruitName.textContent = fruit.name
+        //             firstImage.src = fruit.image
+        //             firstImage.alt = `This is a picture of a ${fruit.name}`
+        //             firstNutritions.textContent = "Nutritions"
+        //             firstFruitCaloiries.textContent = `Calories: ${fruit.nutritions.calories}`
+        //             firstFruitFat.textContent = `Fat: ${fruit.nutritions.fat}`
+        //             firstFruitSugar.textContent = `Sugar: ${fruit.nutritions.sugar}`
+        //             firstFruitCarbohydrates.textContent = `Carboydrates: ${fruit.nutritions.carbohydrates}`
+        //             firstFruitProtein.textContent = `Protein: ${fruit.nutritions.protein}`
+        //         }
+        //     }
+        // })
 
         secondSearchBar.addEventListener("search", event => {
             const fruitName = event.target.value
@@ -125,3 +125,26 @@ function renderFruitData(fruitData) {
         })
     });
 }
+
+firstSearchBar.addEventListener("search", event => {
+    const fruitName = event.target.value
+    const lowercasedFruitName = fruitName.toString().toLowerCase()
+    const results = fruitArray.filter(fruit => fruit.name.toLowerCase().includes(lowercasedFruitName))
+    console.log(results)
+    // if (lowercasedFruitName !== fruit.name.toString().toLowerCase()) {
+    //     // console.log("That fruit does not exist in our data yet.")
+    //     // alert("That fruit does not exist in our data yet.")
+    // } else {
+    //     if (lowercasedFruitName === fruit.name.toString().toLowerCase()) {
+    //         firstFruitName.textContent = fruit.name
+    //         firstImage.src = fruit.image
+    //         firstImage.alt = `This is a picture of a ${fruit.name}`
+    //         firstNutritions.textContent = "Nutritions"
+    //         firstFruitCaloiries.textContent = `Calories: ${fruit.nutritions.calories}`
+    //         firstFruitFat.textContent = `Fat: ${fruit.nutritions.fat}`
+    //         firstFruitSugar.textContent = `Sugar: ${fruit.nutritions.sugar}`
+    //         firstFruitCarbohydrates.textContent = `Carboydrates: ${fruit.nutritions.carbohydrates}`
+    //         firstFruitProtein.textContent = `Protein: ${fruit.nutritions.protein}`
+    //     }
+    // }
+})
