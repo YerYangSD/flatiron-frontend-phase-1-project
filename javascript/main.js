@@ -139,7 +139,7 @@ function getMultiFruits(event) {
     // console.log(multiFruits)
     multiFruits.forEach(fruitString => {
         const fruit = fruitArray.find(fruitObj => fruitObj.name.toLowerCase() === fruitString.toLowerCase())
-        renderFruit(fruit)
+        renderFruitCard(fruit)
         // console.log(fruit)
     });
 }
@@ -152,4 +152,57 @@ function toggleNutritionValues(event, nutritionInfo, button) {
         nutritionInfo.style.display = "none"
         button.textContent = "Show Nutrition Info";
     }
+}
+
+function renderFruitCard(fruit) {
+    const card = document.createElement("div")
+    card.classList.add("card")
+
+    const fruitImage = document.createElement("img")
+    fruitImage.src = fruit.image
+    fruitImage.alt = `This is a picture of a ${fruit.name}`
+
+    const textContainer = document.createElement("div")
+    textContainer.classList.add("container")
+
+    let fruitTitle = document.createElement("h4")
+    fruitTitle = fruit.name
+
+    const nutritionInfo = document.createElement("ul")
+    nutritionInfo.style.display = "none"
+
+    const fruitCalories = document.createElement("li")
+    fruitCalories.textContent = `Calories: ${fruit.nutritions.calories}`
+
+    const fruitFat = document.createElement("li")
+    fruitFat.textContent = `Fat: ${fruit.nutritions.fat}`
+
+    const fruitSugar = document.createElement("li")
+    fruitSugar.textContent = `Sugar: ${fruit.nutritions.sugar}`
+
+    const fruitCarbohydrates = document.createElement("li")
+    fruitCarbohydrates.textContent = `Carboydrates: ${fruit.nutritions.carbohydrates}`
+
+    const fruitProtein = document.createElement("li")
+    fruitProtein.textContent = `Protein: ${fruit.nutritions.protein}`
+
+    const button = document.createElement("button")
+    button.textContent = "Show Nutrition Info"
+
+    button.addEventListener("click", event => toggleNutritionValues(event, nutritionInfo, button))
+
+    nutritionInfo.append(fruitCalories, fruitFat, fruitSugar, fruitCarbohydrates, fruitProtein)
+
+    textContainer.append(fruitTitle, nutritionInfo)
+
+    card.append(fruitImage, textContainer, button)
+
+    fruitContainer.append(card)
+    // <div class="card">
+    //     <img src="img_avatar.png" alt="Avatar" style="width:100%">
+    //         <div class="container">
+    //             <h4><b>John Doe</b></h4>
+    //             <p>Architect & Engineer</p>
+    //         </div>
+    // </div>
 }
