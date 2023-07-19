@@ -21,6 +21,7 @@ const secondFruitCarbohydrates = document.querySelector("#second-fruit-carbohydr
 const secondFruitProtein = document.querySelector("#second-fruit-protein")
 const firstSearchBar = document.querySelector("#first-search-bar")
 const secondSearchBar = document.querySelector("#second-search-bar")
+const multiDropdown = document.querySelector("#multidropdown")
 let fruitArray = []
 
 // Function Calls
@@ -40,7 +41,7 @@ function getFruitData() {
 function buildFruitArray(fruitData) {
     fruitData.forEach(fruit => fruitArray.push(fruit))
 }
-console.log(fruitArray)
+// console.log(fruitArray)
 
 // Displays fruit names to the dropdowns
 function renderFruitData(fruitData) {
@@ -53,53 +54,32 @@ function renderFruitData(fruitData) {
         selection1.append(option1)
         selection2.append(option2)
 
-        selection1.addEventListener("change", event => {
-            // console.log(event.target.value)
-            if (event.target.value === fruit.name) {
-                firstFruitName.textContent = fruit.name
-                firstImage.src = fruit.image
-                firstImage.alt = `This is a picture of a ${fruit.name}`
-                firstNutritions.textContent = "Nutritions"
-                firstFruitCaloiries.textContent = `Calories: ${fruit.nutritions.calories}`
-                firstFruitFat.textContent = `Fat: ${fruit.nutritions.fat}`
-                firstFruitSugar.textContent = `Sugar: ${fruit.nutritions.sugar}`
-                firstFruitCarbohydrates.textContent = `Carboydrates: ${fruit.nutritions.carbohydrates}`
-                firstFruitProtein.textContent = `Protein: ${fruit.nutritions.protein}`
-            }
-        })
+        // selection1.addEventListener("change", event => {
+        //     // console.log(event.target.value)
+        //     if (event.target.value === fruit.name) {
+        //         firstFruitName.textContent = fruit.name
+        //         firstImage.src = fruit.image
+        //         firstImage.alt = `This is a picture of a ${fruit.name}`
+        //         firstNutritions.textContent = "Nutritions"
+        //         firstFruitCaloiries.textContent = `Calories: ${fruit.nutritions.calories}`
+        //         firstFruitFat.textContent = `Fat: ${fruit.nutritions.fat}`
+        //         firstFruitSugar.textContent = `Sugar: ${fruit.nutritions.sugar}`
+        //         firstFruitCarbohydrates.textContent = `Carboydrates: ${fruit.nutritions.carbohydrates}`
+        //         firstFruitProtein.textContent = `Protein: ${fruit.nutritions.protein}`
+        //     }
+        // })
 
-        selection2.addEventListener("change", event => {
-            // console.log(event.target.value)
-            if (event.target.value === fruit.name) {
-                secondImage.src = fruit.image
-                secondImage.alt = `This is a picture of a ${fruit.name}`
-                secondNutritions.textContent = "Nutritions"
-                secondFruitCaloiries.textContent = `Calories: ${fruit.nutritions.calories}`
-                secondFruitFat.textContent = `Fat: ${fruit.nutritions.fat}`
-                secondFruitSugar.textContent = `Sugar: ${fruit.nutritions.sugar}`
-                secondFruitCarbohydrates.textContent = `Carboydrates: ${fruit.nutritions.carbohydrates}`
-                secondFruitProtein.textContent = `Protein: ${fruit.nutritions.protein}`
-            }
-        })
-
-        // firstSearchBar.addEventListener("search", event => {
-        //     const fruitName = event.target.value
-        //     const lowercasedFruitName = fruitName.toString().toLowerCase()
-        //     if (lowercasedFruitName !== fruit.name.toString().toLowerCase()) {
-        //         // console.log("That fruit does not exist in our data yet.")
-        //         // alert("That fruit does not exist in our data yet.")
-        //     } else {
-        //         if (lowercasedFruitName === fruit.name.toString().toLowerCase()) {
-        //             firstFruitName.textContent = fruit.name
-        //             firstImage.src = fruit.image
-        //             firstImage.alt = `This is a picture of a ${fruit.name}`
-        //             firstNutritions.textContent = "Nutritions"
-        //             firstFruitCaloiries.textContent = `Calories: ${fruit.nutritions.calories}`
-        //             firstFruitFat.textContent = `Fat: ${fruit.nutritions.fat}`
-        //             firstFruitSugar.textContent = `Sugar: ${fruit.nutritions.sugar}`
-        //             firstFruitCarbohydrates.textContent = `Carboydrates: ${fruit.nutritions.carbohydrates}`
-        //             firstFruitProtein.textContent = `Protein: ${fruit.nutritions.protein}`
-        //         }
+        // selection2.addEventListener("change", event => {
+        //     // console.log(event.target.value)
+        //     if (event.target.value === fruit.name) {
+        //         secondImage.src = fruit.image
+        //         secondImage.alt = `This is a picture of a ${fruit.name}`
+        //         secondNutritions.textContent = "Nutritions"
+        //         secondFruitCaloiries.textContent = `Calories: ${fruit.nutritions.calories}`
+        //         secondFruitFat.textContent = `Fat: ${fruit.nutritions.fat}`
+        //         secondFruitSugar.textContent = `Sugar: ${fruit.nutritions.sugar}`
+        //         secondFruitCarbohydrates.textContent = `Carboydrates: ${fruit.nutritions.carbohydrates}`
+        //         secondFruitProtein.textContent = `Protein: ${fruit.nutritions.protein}`
         //     }
         // })
 
