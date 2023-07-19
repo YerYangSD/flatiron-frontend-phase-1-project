@@ -2,8 +2,8 @@
 
 As a user:
 
-- [ ] I want to be able to select two different fruits, one from each dropdown and compare the nutrition values.
-- [ ] I want to be able to search two different fruits, one from each input section and compare the nutrition values.
+- [x] I want to be able to select multiple fruits from a dropdown to compare the nutrition values.
+- [x] I want to be able to hide and show nutrition values.
 
 # Todo July 5, 2023
 
@@ -19,3 +19,7 @@ As a user:
 - [ ] Populate fruit nutrition values for each fruit selected
   - [x] adds html elements to store fruit nutrition values
   - [x] grab the html elements and append fruit nutrition values to it
+- [ ] search two fruits to compare the nutrition values
+  - [x] add two input tags in the header
+  - [x] add type attribute to the input tags and add "search" as the value
+  - [x] add placeholder to the input tags

@@ -83,26 +83,6 @@ function renderFruitData(fruitData) {
         //     }
         // })
 
-        secondSearchBar.addEventListener("search", event => {
-            const fruitName = event.target.value
-            const lowercasedFruitName = fruitName.toString().toLowerCase()
-            if (lowercasedFruitName !== fruit.name.toString().toLowerCase()) {
-                // console.log("That fruit does not exist in our data yet.")
-                // alert("That fruit does not exist in our data yet.")
-            } else {
-                if (lowercasedFruitName === fruit.name.toString().toLowerCase()) {
-                    secondFruitName.textContent = fruit.name
-                    secondImage.src = fruit.image
-                    secondImage.alt = `This is a picture of a ${fruit.name}`
-                    secondNutritions.textContent = "Nutritions"
-                    secondFruitCaloiries.textContent = `Calories: ${fruit.nutritions.calories}`
-                    secondFruitFat.textContent = `Fat: ${fruit.nutritions.fat}`
-                    secondFruitSugar.textContent = `Sugar: ${fruit.nutritions.sugar}`
-                    secondFruitCarbohydrates.textContent = `Carboydrates: ${fruit.nutritions.carbohydrates}`
-                    secondFruitProtein.textContent = `Protein: ${fruit.nutritions.protein}`
-                }
-            }
-        })
     });
 }
 
@@ -110,21 +90,66 @@ firstSearchBar.addEventListener("search", event => {
     const fruitName = event.target.value
     const lowercasedFruitName = fruitName.toString().toLowerCase()
     const results = fruitArray.filter(fruit => fruit.name.toLowerCase().includes(lowercasedFruitName))
-    console.log(results)
-    // if (lowercasedFruitName !== fruit.name.toString().toLowerCase()) {
-    //     // console.log("That fruit does not exist in our data yet.")
-    //     // alert("That fruit does not exist in our data yet.")
-    // } else {
-    //     if (lowercasedFruitName === fruit.name.toString().toLowerCase()) {
-    //         firstFruitName.textContent = fruit.name
-    //         firstImage.src = fruit.image
-    //         firstImage.alt = `This is a picture of a ${fruit.name}`
-    //         firstNutritions.textContent = "Nutritions"
-    //         firstFruitCaloiries.textContent = `Calories: ${fruit.nutritions.calories}`
-    //         firstFruitFat.textContent = `Fat: ${fruit.nutritions.fat}`
-    //         firstFruitSugar.textContent = `Sugar: ${fruit.nutritions.sugar}`
-    //         firstFruitCarbohydrates.textContent = `Carboydrates: ${fruit.nutritions.carbohydrates}`
-    //         firstFruitProtein.textContent = `Protein: ${fruit.nutritions.protein}`
-    //     }
-    // }
+    renderFruits(results)
 })
+
+function renderFruits(results) {
+    if (results.length === 0) {
+        alert("No Fruits Found")
+    } else {
+        results.forEach(fruit => renderFruit(fruit))
+    }
+}
+
+function renderFruit(fruit) {
+    const fruitName = document.createElement("h2")
+    const fruitImage = document.createElement("img")
+    const nutritionInfo = document.createElement("ul")
+    const fruitCaloiries = document.createElement("li")
+    const fruitFat = document.createElement("li")
+    const fruitSugar = document.createElement("li")
+    const fruitCarbohydrates = document.createElement("li")
+    const fruitProtein = document.createElement("li")
+    const button = document.createElement("button")
+
+    fruitName.textContent = fruit.name
+    fruitImage.src = fruit.image
+    fruitImage.alt = `This is a picture of a ${fruit.name}`
+    button.type = "button"
+    button.textContent = "Hide Nutrition Info"
+    fruitCaloiries.textContent = `Calories: ${fruit.nutritions.calories}`
+    fruitFat.textContent = `Fat: ${fruit.nutritions.fat}`
+    fruitSugar.textContent = `Sugar: ${fruit.nutritions.sugar}`
+    fruitCarbohydrates.textContent = `Carboydrates: ${fruit.nutritions.carbohydrates}`
+    fruitProtein.textContent = `Protein: ${fruit.nutritions.protein}`
+    nutritionInfo.append(fruitCaloiries, fruitFat, fruitSugar, fruitCarbohydrates, fruitProtein)
+    fruitContainer.append(fruitName, fruitImage, button, nutritionInfo)
+    // console.log(fruitContainer)
+
+    button.addEventListener("click", event => toggleNutritionValues(event, nutritionInfo, button))
+}
+
+multiDropdown.addEventListener("submit", getMultiFruits)
+
+function getMultiFruits(event) {
+    event.preventDefault()
+    fruitContainer.textContent = ""
+    const dropdown = event.target[0]
+    const multiFruits = Array.from(dropdown.selectedOptions).map(fruit => fruit.value)
+    // console.log(multiFruits)
+    multiFruits.forEach(fruitString => {
+        const fruit = fruitArray.find(fruitObj => fruitObj.name.toLowerCase() === fruitString.toLowerCase())
+        renderFruit(fruit)
+        // console.log(fruit)
+    });
+}
+
+function toggleNutritionValues(event, nutritionInfo, button) {
+    if (nutritionInfo.style.display === "none") {
+        nutritionInfo.style.display = "block"
+        button.textContent = "Hide Nutrition Info";
+    } else {
+        nutritionInfo.style.display = "none"
+        button.textContent = "Show Nutrition Info";
+    }
+}
