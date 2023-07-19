@@ -165,8 +165,8 @@ function renderFruitCard(fruit) {
     const textContainer = document.createElement("div")
     textContainer.classList.add("container")
 
-    let fruitTitle = document.createElement("h4")
-    fruitTitle = fruit.name
+    const fruitTitle = document.createElement("h3")
+    fruitTitle.textContent = fruit.name
 
     const nutritionInfo = document.createElement("ul")
     nutritionInfo.style.display = "none"
