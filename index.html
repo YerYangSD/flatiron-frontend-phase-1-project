@@ -18,36 +18,28 @@
 <body>
     <header>
         <h1>FruitNutriGuide</h1>
+        <p>Can't decide what fruit to eat? Here is a short list of fruits with nutrition values that may help
+            guide you to your selection. Select one fruit or more by holding down the control key (command key on mac)
+            and left click multiple fruits in the fruit selection. Once you have chosen your fruit(s) of choice, click
+            the submit button and you should be able to view your results below.</p>
+        <section class="select-section">
+            <form id="multidropdown">
+                <select id="selection-1" multiple>
+                    <option value="">Fruit Selection</option>
+                </select>
+                <input type="submit">
+            </form>
+
+            <input type="search" id="first-search-bar" placeholder="Search by Name" size="25">
+            <select id="selection-2">
+                <option value="">Select Another Fruit</option>
+            </select>
+            <input type="search" id="second-search-bar" placeholder="Search by Name" size="25">
+        </section>
     </header>
     <main>
-        <section class="select-section">
-            <label for="selection-1">Select a Fruit</label>
-            <select id="selection-1"></select>
-            <br>
-            <label for="selection-2">Select another Fruit</label>
-            <select id="selection-2"></select>
-        </section>
         <section class="fruit-image-info-section">
-            <div id="first-image-container">
-                <h2 id="first-fruit-name"></h2>
-                <img src="#" alt="" id="first-image">
-                <h3 id="first-nutritions"></h3>
-                <ul id="first-fruit-caloiries"></ul>
-                <ul id="first-fruit-fat"></ul>
-                <ul id="first-fruit-sugar"></ul>
-                <ul id="first-fruit-carbohydrates"></ul>
-                <ul id="first-fruit-protein"></ul>
-            </div>
-            <div id="second-image-container">
-                <h2 id="second-fruit-name"></h2>
-                <img src="#" alt="" id="second-image">
-                <h3 id="second-nutritions"></h3>
-                <ul id="second-fruit-caloiries"></ul>
-                <ul id="second-fruit-fat"></ul>
-                <ul id="second-fruit-sugar"></ul>
-                <ul id="second-fruit-carbohydrates"></ul>
-                <ul id="second-fruit-protein"></ul>
-            </div>
+            <div id="fruit-container"></div>
         </section>
     </main>
     <footer>
