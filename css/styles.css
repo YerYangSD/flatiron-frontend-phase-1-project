@@ -1,5 +1,34 @@
+html {
+  height: 100%;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   background-color: whitesmoke;
+}
+
+h1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px;
+}
+
+.select-section {
+  display: grid;
+    justify-content: center
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 #fruit-container {
@@ -35,4 +64,13 @@ body {
 
 button {
   margin: 5px;
+}
+
+footer {
+flex-shrink: 0;
+}
+
+#back-to-top {
+  display: flex;
+  justify-content: center;
 }
