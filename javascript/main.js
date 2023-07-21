@@ -1,37 +1,39 @@
-// Select Elements
-const selection1 = document.querySelector("#selection-1")
+// Selects html elements and set the variable called "fruitArray" to an empty array
+const selection = document.querySelector("#selection")
 const fruitContainer = document.querySelector("#fruit-container")
-const multiDropdown = document.querySelector("#multidropdown")
+const multiDropdownForm = document.querySelector("#multi-dropdown-form")
 let fruitArray = []
 
-// Function Calls
+// Calls the function that fetches a get request.
 getFruitData()
 
-// This function fetches a get request the provided URL to get a Fruit Collection
+// This function fetches a get request to the provided URL to get a fruit collection(HTMLcollection that looks like an array of objects), builds a fruit array, displays fruit name, and alert an error message if it exist.
 function getFruitData() {
     return fetch("http://localhost:3000/fruits")
         .then(response => response.json())
         .then(fruitData => {
             buildFruitArray(fruitData);
-            renderFruitData(fruitData)
+            displaysFruitName(fruitData)
         })
         .catch(error => alert(error))
 }
 
+// This function iterate through the fruitData and push each fruit to the empty array assigned by the variable name fruitArray.
 function buildFruitArray(fruitData) {
     fruitData.forEach(fruit => fruitArray.push(fruit))
 }
 
-// Displays fruit names to the dropdowns
-function renderFruitData(fruitData) {
+// Displays fruit names to mult-dropdown
+function displaysFruitName(fruitData) {
     fruitData.forEach(fruit => {
         const option1 = document.createElement("option")
         option1.textContent = fruit.name
-        selection1.append(option1)
+        selection.append(option1)
     });
 }
 
-multiDropdown.addEventListener("submit", getMultiFruits)
+// Adds submit event to mult-dropdown form
+multiDropdownForm.addEventListener("submit", getMultiFruits)
 
 function getMultiFruits(event) {
     event.preventDefault()
@@ -44,6 +46,8 @@ function getMultiFruits(event) {
     });
 }
 
+// This function shows the nutrition info if it is not displaying and set the button content to "Hide Nutrition Info."
+// If nutrition info is displaying, hide nutrition info and set button content to "Show Nutrition info."
 function toggleNutritionValues(event, nutritionInfo, button) {
     if (nutritionInfo.style.display === "none") {
         nutritionInfo.style.display = "block"
@@ -54,6 +58,10 @@ function toggleNutritionValues(event, nutritionInfo, button) {
     }
 }
 
+// This function creates a card which holds a fruit image, text container and a button.
+// The text container holds the fruit name as the fruit title and nutrition info.
+// The button shows or hides nutrition info with each click event.
+// The card then gets append to the fruit container, so it can be rendered to the DOM.
 function renderFruitCard(fruit) {
     const card = document.createElement("div")
     card.classList.add("card")
