@@ -1,142 +1,53 @@
-// Select Elements
-const selection1 = document.querySelector("#selection-1")
-// const selection2 = document.querySelector("#selection-2")
+// Selects html elements and set the variable called "fruitArray" to an empty array
+const selection = document.querySelector("#selection")
 const fruitContainer = document.querySelector("#fruit-container")
-// const secondImageContainer = document.querySelector("#second-image-container")
-// const firstImage = document.querySelector("#first-image")
-// const secondImage = document.querySelector("#second-image")
-// const firstFruitName = document.querySelector("#first-fruit-name")
-// const firstNutritions = document.querySelector("#first-nutritions")
-// const firstFruitCaloiries = document.querySelector("#first-fruit-caloiries")
-// const firstFruitFat = document.querySelector("#first-fruit-fat")
-// const firstFruitSugar = document.querySelector("#first-fruit-sugar")
-// const firstFruitCarbohydrates = document.querySelector("#first-fruit-carbohydrates")
-// const firstFruitProtein = document.querySelector("#first-fruit-protein")
-// const secondFruitName = document.querySelector("#second-fruit-name")
-// const secondNutritions = document.querySelector("#second-nutritions")
-// const secondFruitCaloiries = document.querySelector("#second-fruit-caloiries")
-// const secondFruitFat = document.querySelector("#second-fruit-fat")
-// const secondFruitSugar = document.querySelector("#second-fruit-sugar")
-// const secondFruitCarbohydrates = document.querySelector("#second-fruit-carbohydrates")
-// const secondFruitProtein = document.querySelector("#second-fruit-protein")
-// const firstSearchBar = document.querySelector("#first-search-bar")
-// const secondSearchBar = document.querySelector("#second-search-bar")
-const multiDropdown = document.querySelector("#multidropdown")
+const multiDropdownForm = document.querySelector("#multi-dropdown-form")
 let fruitArray = []
 
-// Function Calls
+// Calls the function that fetches a get request.
 getFruitData()
 
-// This function fetches a get request the provided URL to get a Fruit Collection
+// This function fetches a get request to the provided URL to get a fruit collection(HTMLcollection that looks like an array of objects), builds a fruit array, displays fruit name, and alert an error message if it exist.
 function getFruitData() {
     return fetch("http://localhost:3000/fruits")
         .then(response => response.json())
         .then(fruitData => {
             buildFruitArray(fruitData);
-            renderFruitData(fruitData)
+            displaysFruitName(fruitData)
         })
         .catch(error => alert(error))
 }
 
+// This function iterate through the fruitData and push each fruit to the empty array assigned by the variable name fruitArray.
 function buildFruitArray(fruitData) {
     fruitData.forEach(fruit => fruitArray.push(fruit))
 }
-// console.log(fruitArray)
 
-// Displays fruit names to the dropdowns
-function renderFruitData(fruitData) {
+// Displays fruit names to mult-dropdown
+function displaysFruitName(fruitData) {
     fruitData.forEach(fruit => {
-        // console.log(fruit)
         const option1 = document.createElement("option")
         option1.textContent = fruit.name
-        // const option2 = document.createElement("option")
-        // option2.textContent = fruit.name
-        selection1.append(option1)
-        // selection2.append(option2)
-
-        // selection1.addEventListener("change", event => {
-        //     // console.log(event.target.value)
-        //     if (event.target.value === fruit.name) {
-        //         firstFruitName.textContent = fruit.name
-        //         firstImage.src = fruit.image
-        //         firstImage.alt = `This is a picture of a ${fruit.name}`
-        //         firstNutritions.textContent = "Nutritions"
-        //         firstFruitCaloiries.textContent = `Calories: ${fruit.nutritions.calories}`
-        //         firstFruitFat.textContent = `Fat: ${fruit.nutritions.fat}`
-        //         firstFruitSugar.textContent = `Sugar: ${fruit.nutritions.sugar}`
-        //         firstFruitCarbohydrates.textContent = `Carboydrates: ${fruit.nutritions.carbohydrates}`
-        //         firstFruitProtein.textContent = `Protein: ${fruit.nutritions.protein}`
-        //     }
-        // })
-
-        // selection2.addEventListener("change", event => {
-        //     // console.log(event.target.value)
-        //     if (event.target.value === fruit.name) {
-        //         secondImage.src = fruit.image
-        //         secondImage.alt = `This is a picture of a ${fruit.name}`
-        //         secondNutritions.textContent = "Nutritions"
-        //         secondFruitCaloiries.textContent = `Calories: ${fruit.nutritions.calories}`
-        //         secondFruitFat.textContent = `Fat: ${fruit.nutritions.fat}`
-        //         secondFruitSugar.textContent = `Sugar: ${fruit.nutritions.sugar}`
-        //         secondFruitCarbohydrates.textContent = `Carboydrates: ${fruit.nutritions.carbohydrates}`
-        //         secondFruitProtein.textContent = `Protein: ${fruit.nutritions.protein}`
-        //     }
-        // })
-
+        selection.append(option1)
     });
 }
 
-// function renderFruits(results) {
-//     if (results.length === 0) {
-//         alert("No Fruits Found")
-//     } else {
-//         results.forEach(fruit => renderFruit(fruit))
-//     }
-// }
-
-// function renderFruit(fruit) {
-//     // const fruitName = document.createElement("h2")
-//     // const fruitImage = document.createElement("img")
-//     // const nutritionInfo = document.createElement("ul")
-//     // const fruitCaloiries = document.createElement("li")
-//     // const fruitFat = document.createElement("li")
-//     // const fruitSugar = document.createElement("li")
-//     // const fruitCarbohydrates = document.createElement("li")
-//     // const fruitProtein = document.createElement("li")
-//     // const button = document.createElement("button")
-
-//     // fruitName.textContent = fruit.name
-//     // fruitImage.src = fruit.image
-//     // fruitImage.alt = `This is a picture of a ${fruit.name}`
-//     // button.type = "button"
-//     // button.textContent = "Hide Nutrition Info"
-//     // fruitCaloiries.textContent = `Calories: ${fruit.nutritions.calories}`
-//     // fruitFat.textContent = `Fat: ${fruit.nutritions.fat}`
-//     // fruitSugar.textContent = `Sugar: ${fruit.nutritions.sugar}`
-//     // fruitCarbohydrates.textContent = `Carboydrates: ${fruit.nutritions.carbohydrates}`
-//     // fruitProtein.textContent = `Protein: ${fruit.nutritions.protein}`
-//     // nutritionInfo.append(fruitCaloiries, fruitFat, fruitSugar, fruitCarbohydrates, fruitProtein)
-//     // fruitContainer.append(fruitName, fruitImage, button, nutritionInfo)
-//     // console.log(fruitContainer)
-
-//     button.addEventListener("click", event => toggleNutritionValues(event, nutritionInfo, button))
-// }
-
-multiDropdown.addEventListener("submit", getMultiFruits)
+// Adds submit event to mult-dropdown form
+multiDropdownForm.addEventListener("submit", getMultiFruits)
 
 function getMultiFruits(event) {
     event.preventDefault()
     fruitContainer.textContent = ""
     const dropdown = event.target[0]
     const multiFruits = Array.from(dropdown.selectedOptions).map(fruit => fruit.value)
-    // console.log(multiFruits)
     multiFruits.forEach(fruitString => {
         const fruit = fruitArray.find(fruitObj => fruitObj.name.toLowerCase() === fruitString.toLowerCase())
         renderFruitCard(fruit)
-        // console.log(fruit)
     });
 }
 
+// This function shows the nutrition info if it is not displaying and set the button content to "Hide Nutrition Info."
+// If nutrition info is displaying, hide nutrition info and set button content to "Show Nutrition info."
 function toggleNutritionValues(event, nutritionInfo, button) {
     if (nutritionInfo.style.display === "none") {
         nutritionInfo.style.display = "block"
@@ -147,6 +58,10 @@ function toggleNutritionValues(event, nutritionInfo, button) {
     }
 }
 
+// This function creates a card which holds a fruit image, text container and a button.
+// The text container holds the fruit name as the fruit title and nutrition info.
+// The button shows or hides nutrition info with each click event.
+// The card then gets append to the fruit container, so it can be rendered to the DOM.
 function renderFruitCard(fruit) {
     const card = document.createElement("div")
     card.classList.add("card")
@@ -191,11 +106,4 @@ function renderFruitCard(fruit) {
     card.append(fruitImage, textContainer, button)
 
     fruitContainer.append(card)
-    // <div class="card">
-    //     <img src="img_avatar.png" alt="Avatar" style="width:100%">
-    //         <div class="container">
-    //             <h4><b>John Doe</b></h4>
-    //             <p>Architect & Engineer</p>
-    //         </div>
-    // </div>
 }
