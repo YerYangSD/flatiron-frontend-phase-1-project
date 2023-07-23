@@ -7,7 +7,11 @@ let fruitArray = []
 // Calls the function that fetches a get request.
 getFruitData()
 
-// This function fetches a get request to the provided URL to get a fruit collection(HTMLcollection that looks like an array of objects), builds a fruit array, displays fruit name, and alert an error message if it exist.
+// This function fetches a http get request to the provided URL(mock server in this case). The server processes the request and sends a response back.
+// The response is then read and parsed using the json() method provided by the browser and returns a promise.
+// Once the promise is resolved, the result will be a javascript object(fruit data).
+// Then the fruit data(array of objects) gets passed into two call back functions. One builds a fruit array and one displays fruit name.
+// If there is a error at any point, alert an error message.
 function getFruitData() {
     return fetch("http://localhost:3000/fruits")
         .then(response => response.json())
