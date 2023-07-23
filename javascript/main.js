@@ -17,7 +17,7 @@ function getFruitData() {
         .then(response => response.json())
         .then(fruitData => {
             buildFruitArray(fruitData);
-            displaysFruitName(fruitData)
+            displaysFruitName()
         })
         .catch(error => alert(error))
 }
@@ -42,8 +42,8 @@ function buildFruitArray(fruitData) {
 }
 
 // Displays fruit names to mult-dropdown
-function displaysFruitName(fruitData) {
-    fruitData.forEach(fruit => {
+function displaysFruitName() {
+    fruitArray.forEach(fruit => {
         const option1 = document.createElement("option")
         option1.textContent = fruit.name
         selection.append(option1)
@@ -96,6 +96,7 @@ function renderFruitCard(fruit) {
 
     const nutritionInfo = document.createElement("ul")
     nutritionInfo.style.display = "none"
+    nutritionInfo.classList.add("nutrition-list")
 
     const fruitCalories = document.createElement("li")
     fruitCalories.textContent = `Calories: ${fruit.nutritions.calories}`
@@ -107,7 +108,7 @@ function renderFruitCard(fruit) {
     fruitSugar.textContent = `Sugar: ${fruit.nutritions.sugar}`
 
     const fruitCarbohydrates = document.createElement("li")
-    fruitCarbohydrates.textContent = `Carboydrates: ${fruit.nutritions.carbohydrates}`
+    fruitCarbohydrates.textContent = `Carbs: ${fruit.nutritions.carbohydrates}`
 
     const fruitProtein = document.createElement("li")
     fruitProtein.textContent = `Protein: ${fruit.nutritions.protein}`
