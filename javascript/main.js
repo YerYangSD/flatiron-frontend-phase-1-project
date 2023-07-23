@@ -2,7 +2,7 @@
 const selection = document.querySelector("#selection")
 const fruitContainer = document.querySelector("#fruit-container")
 const multiDropdownForm = document.querySelector("#multi-dropdown-form")
-let fruitArray = []
+const fruitArray = []
 
 // Calls the function that fetches a get request.
 getFruitData()
