@@ -22,9 +22,23 @@ function getFruitData() {
         .catch(error => alert(error))
 }
 
-// This function iterate through the fruitData and push each fruit to the empty array assigned by the variable name fruitArray.
+// This function iterate through the fruit data, copies each fruit data and sends each to the empty array assigned by the variable name called fruitArray.
+// FruitArray then gets sorted alphabetically using the sort() method which takes in two arguments.
 function buildFruitArray(fruitData) {
     fruitData.forEach(fruit => fruitArray.push(fruit))
+    fruitArray.sort((a, b) => {
+        const nameA = a.name.toUpperCase(); // ignore upper and lowercase
+        const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+
+        // names must be equal
+        return 0;
+    })
 }
 
 // Displays fruit names to mult-dropdown
